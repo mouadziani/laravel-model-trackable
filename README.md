@@ -12,7 +12,7 @@ A laravel package that allows you to tracker and log nested changes applied on y
 You can install the package via composer:
 
 ```bash
-composer require mouadziani/laravel-nested-changes-tracker
+composer require mouadziani/laravel-model-trackable
 ```
 
 ## Usage
