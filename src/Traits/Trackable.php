@@ -14,7 +14,7 @@ trait Trackable
      */
     private static $changedAttributes = [];
 
-    protected static function boot()
+    protected static function bootTrackable()
     {
         parent::boot();
 
