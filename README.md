@@ -15,11 +15,29 @@ You can install the package via composer:
 composer require mouadziani/laravel-model-trackable
 ```
 
-## Usage
+## Simple Usage
 
 ``` php
-// Usage description here
+
+use Mouadziani\Traits\Trackable;
+
+class ModelName extends Model
+{
+    use Trackable;
+
+    //
+}
 ```
+
+##### Then you can get array of changed attribute after every update
+``` php
+    $model = ModelName::update([
+        ...
+    ]);
+    
+    // Get list of changed attributes
+    $model->getChangedAttributes();
+ ```
 
 ### Testing
 
