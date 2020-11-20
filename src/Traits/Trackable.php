@@ -16,8 +16,6 @@ trait Trackable
 
     protected static function bootTrackable()
     {
-        parent::boot();
-
         static::updated(function ($model) {
             self::$changedAttributes['old'] = Arr::only($model->getRawOriginal(), array_keys($model->changes));
             self::$changedAttributes['new'] = $model->changes;
