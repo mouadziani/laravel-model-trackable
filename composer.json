@@ -1,0 +1,54 @@
+{
+    "name": "mouadziani/laravel-model-trackable",
+    "description": "A laravel package that allows you to tracker and log nested changes applied on your models and their relations using a single Trait",
+    "keywords": [
+        "mouadziani",
+        "laravel-model-trackable"
+    ],
+    "homepage": "https://github.com/mouadziani/laravel-model-trackable",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mouad ZIANI",
+            "email": "mouad.ziani1997@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mouadziani\\LaravelModelTrackable\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mouadziani\\LaravelModelTrackable\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mouadziani\\LaravelModelTrackable\\LaravelModelTrackableServiceProvider"
+            ],
+            "aliases": {
+                "LaravelModelTrackable": "Mouadziani\\LaravelModelTrackable\\LaravelModelTrackableFacade"
+            }
+        }
+    }
+}
