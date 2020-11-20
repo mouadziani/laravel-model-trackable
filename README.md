@@ -31,12 +31,12 @@ class ModelName extends Model
 
 ##### Then you can get array of changed attribute after every update
 ``` php
-    $model = ModelName::update([
-        ...
-    ]);
-    
-    // Get list of changed attributes
-    $model->getChangedAttributes();
+$model = ModelName::update([
+    ...
+]);
+
+// Get list of changed attributes
+$model->getChangedAttributes();
  ```
 
 ### Testing
