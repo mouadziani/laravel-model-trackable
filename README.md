@@ -1,9 +1,9 @@
 # Laravel Models Tracker
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/mouadziani/laravel-nested-changes-tracker.svg?style=flat-square)](https://packagist.org/packages/mouadziani/laravel-nested-changes-tracker)
-[![Build Status](https://img.shields.io/travis/mouadziani/laravel-nested-changes-tracker/master.svg?style=flat-square)](https://travis-ci.org/mouadziani/laravel-nested-changes-tracker)
-[![Quality Score](https://img.shields.io/scrutinizer/g/mouadziani/laravel-nested-changes-tracker.svg?style=flat-square)](https://scrutinizer-ci.com/g/mouadziani/laravel-nested-changes-tracker)
-[![Total Downloads](https://img.shields.io/packagist/dt/mouadziani/laravel-nested-changes-tracker.svg?style=flat-square)](https://packagist.org/packages/mouadziani/laravel-nested-changes-tracker)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/mouadziani/laravel-model-trackable.svg?style=flat-square)](https://packagist.org/packages/mouadziani/laravel-model-trackable)
+[![Build Status](https://img.shields.io/travis/mouadziani/laravel-model-trackable/master.svg?style=flat-square)](https://travis-ci.org/mouadziani/laravel-model-trackable)
+[![Quality Score](https://img.shields.io/scrutinizer/g/mouadziani/laravel-model-trackable.svg?style=flat-square)](https://scrutinizer-ci.com/g/mouadziani/laravel-model-trackable)
+[![Total Downloads](https://img.shields.io/packagist/dt/mouadziani/laravel-model-trackable.svg?style=flat-square)](https://packagist.org/packages/mouadziani/laravel-model-trackable)
 
 A laravel package that allows you to tracker and log nested changes applied on your models, and their relations using a **single Trait** 
 
