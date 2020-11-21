@@ -1,6 +1,6 @@
 <?php
 
-namespace Mouadziani\Traits;
+namespace LaravelModelTrackable\Traits;
 
 use Illuminate\Support\Arr;
 
