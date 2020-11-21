@@ -17,7 +17,7 @@ composer require mouadziani/laravel-model-trackable
 
 ``` php
 
-use Mouadziani\Traits\Trackable;
+use LaravelModelTrackable\Traits\Trackable;
 
 class ModelName extends Model
 {
