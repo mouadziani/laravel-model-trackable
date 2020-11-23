@@ -17,16 +17,12 @@ trait Trackable
     protected static function bootTrackable()
     {
         static::updated(function ($model) {
-            self::$changedAttributes['old'] = Arr::only($model->getRawOriginal(), array_keys($model->changes));
+            $changedFields = array_keys(Arr::except($model->getChanges(), 'updated_at'));
+            self::$changedAttributes['old'] = Arr::only($model->getRawOriginal(), $changedFields);
             self::$changedAttributes['new'] = $model->changes;
         });
     }
 
-    /**
-     * Get array of changed attributes
-     *
-     * @return array
-     */
     public function getChangedAttributes() {
         if(
             property_exists(self::class, 'toBeLoggedRelations')
@@ -38,8 +34,10 @@ trait Trackable
             $relationsChanges = [];
             foreach ($this->toBeLoggedRelations as $relation) {
                 $changes = $this->{$relation}->getChangedAttributes();
-                $relationsChanges['old'][$relation] = $changes['old'];
-                $relationsChanges['new'][$relation] = $changes['new'];
+                if(Arr::has($changes, ['old', 'new'])) {
+                    $relationsChanges['old'] = $changes['old'];
+                    $relationsChanges['new'] = $changes['new'];
+                }
             }
             return array_merge_recursive(self::$changedAttributes, $relationsChanges);
         }
