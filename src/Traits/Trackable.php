@@ -22,8 +22,14 @@ trait Trackable
             self::$changedAttributes['new'] = $model->changes;
         });
     }
-
-    public function getChangedAttributes() {
+    
+    /**
+     * Get array of changed attributes
+     *
+     * @return array
+     */
+    public function getChangedAttributes() 
+    {
         if(
             property_exists(self::class, 'toBeLoggedRelations')
             &&
