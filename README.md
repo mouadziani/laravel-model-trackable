@@ -1,4 +1,7 @@
-# Laravel Models Tracker
+<p align="center">
+  <img height="400" src="logo.jpeg" alt="logo" />
+</p>
+<br>
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/mouadziani/laravel-model-trackable.svg?style=flat-square)](https://packagist.org/packages/mouadziani/laravel-model-trackable)
 [![Total Downloads](https://img.shields.io/packagist/dt/mouadziani/laravel-model-trackable.svg?style=flat-square)](https://packagist.org/packages/mouadziani/laravel-model-trackable)
