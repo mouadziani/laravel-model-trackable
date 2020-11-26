@@ -18,6 +18,8 @@ composer require mouadziani/laravel-model-trackable
 
 ## Simple Usage
 
+- Firstly you have to apply trackable trait on your model
+
 ``` php
 
 use LaravelModelTrackable\Traits\Trackable;
@@ -30,7 +32,22 @@ class ModelName extends Model
 }
 ```
 
-##### Then you can get array of changed attribute after every update
+
+- In case you need to track all the changes applied on your model relationships, you need to add an attribute in your that called `$tobeLoggedRelations` which must contain an array of relationships like the example below
+``` php
+
+use LaravelModelTrackable\Traits\Trackable;
+
+class ModelName extends Model
+{
+    use Trackable;
+
+    public $tobeLoggedRelations = ['user', 'relation2'];
+}
+```
+
+
+- Then, you can get an array that should contains all changes applied on your model after every update
 ``` php
 $model = ModelName::update([
     ...
