@@ -33,7 +33,7 @@ class ModelName extends Model
 ```
 
 
-- In case you need to track all the changes applied on your model relationships, you need to add an attribute in your that called `$tobeLoggedRelations` which must contain an array of relationships like the example below
+- In case you want to track all the changes applied on your model relationships, you need to add an attribute in your that called `$tobeLoggedRelations` which must contain an array of relationships like the example below
 ``` php
 
 use LaravelModelTrackable\Traits\Trackable;
