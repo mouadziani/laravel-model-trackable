@@ -95,7 +95,7 @@ class Log extends Model
         $auth = Auth::user();
 
         return self::create([
-            'log_name' => $action,
+            'action' => $action,
             'description' => $description,
             'subject_type' => get_class($subject),
             'subject_id' => $subjectId,
