@@ -2,6 +2,8 @@
 
 namespace LaravelModelTrackable\Traits;
 
+use LaravelModelTrackable\Models\Log;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 
 trait Trackable
@@ -22,13 +24,13 @@ trait Trackable
             self::$changedAttributes['new'] = $model->changes;
         });
     }
-    
+
     /**
      * Get array of changed attributes
      *
      * @return array
      */
-    public function getChangedAttributes() 
+    public function getChangedAttributes()
     {
         if(
             property_exists(self::class, 'toBeLoggedRelations')
@@ -48,5 +50,26 @@ trait Trackable
             return array_merge_recursive(self::$changedAttributes, $relationsChanges);
         }
         return self::$changedAttributes;
+    }
+
+    /**
+     * Method to log an action
+     *
+     * @param string $action
+     * @param string $description
+     * @return mixed
+     */
+    public function log(string $action, string $description = '')
+    {
+        return Log::log($this, $this->id, $action, $description, $this->getChangedAttributes());
+    }
+
+    /**
+     * Logs relationship
+     * @return Builder
+     */
+    public static function logHistory(): Builder
+    {
+        return Log::forSubject(self::getModel());
     }
 }
