@@ -34,5 +34,12 @@
             "LaravelModelTrackable\\Tests\\": "tests/",
             "Database\\Factories\\": "tests/factories/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelModelTrackable\\ServiceProvider"
+            ]
+        }
     }
 }
