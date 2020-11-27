@@ -22,12 +22,6 @@ class Log extends Model
         'properties' => 'collection',
     ];
 
-    public const ACTION_TYPES = [
-        'create' => 'Création',
-        'update' => 'Modification',
-        'delete' => 'Supprission',
-    ];
-
     public function subject(): MorphTo
     {
         return $this->morphTo();
@@ -72,14 +66,6 @@ class Log extends Model
     {
         return $query
             ->where('subject_type', get_class($subject));
-    }
-
-    /**
-     * @return string
-     */
-    public function getCauserFullNameAttribute(): string
-    {
-        return $this->causer->user->nomComplet;
     }
 
     /**
