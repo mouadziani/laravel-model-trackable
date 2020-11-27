@@ -4,7 +4,6 @@
 <br>
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/mouadziani/laravel-model-trackable.svg?style=flat-square)](https://packagist.org/packages/mouadziani/laravel-model-trackable)
-[![Total Downloads](https://img.shields.io/packagist/dt/mouadziani/laravel-model-trackable.svg?style=flat-square)](https://packagist.org/packages/mouadziani/laravel-model-trackable)
 
 A laravel package that allows you to track and log nested changes applied on your (models, and their relations) using a **single Trait** 
 
@@ -32,8 +31,7 @@ class ModelName extends Model
 }
 ```
 
-
-- In case you want to track all the changes applied on your model relationships, you need to add an attribute in your model that called `$toBeLoggedRelations` which must contain an array of relationships like the example below
+- In case you want to track the changes applied on your model's relationships, you need to add an attribute in your model called `$toBeLoggedRelations` which must contain an array of relationships like the example below
 ``` php
 
 use LaravelModelTrackable\Traits\Trackable;
@@ -55,7 +53,7 @@ $model = ModelName::update([
 
 // Get list of changed attributes
 $model->getChangedAttributes();
- ```
+ ``` 
 
 ### Testing
 
