@@ -4,6 +4,7 @@
 <br>
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/mouadziani/laravel-model-trackable.svg?style=flat-square)](https://packagist.org/packages/mouadziani/laravel-model-trackable)
+[![Buy us a tree](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen?style=for-the-badge)](https://plant.treeware.earth/mouadziani/laravel-model-trackable)
 
 A laravel package that allows you to track and log nested changes applied on your (models, and their relations) using a **single Trait** 
 
@@ -78,8 +79,9 @@ If you discover any security related issues, please email mouad.ziani1997@gmail.
 - [Mouad ZIANI](https://github.com/mouadziani)
 - [All Contributors](../../contributors)
 
-## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+## Licence            
+This package is [Treeware](https://treeware.earth). If you use it in production, then we ask that you [**buy the world a tree**](https://plant.treeware.earth/mouadziani/laravel-model-trackable) to thank us for our work. By contributing to the Treeware forest you’ll be creating employment for local families and restoring wildlife habitats.
+
 
 feautred_repository
