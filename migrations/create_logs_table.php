@@ -11,7 +11,7 @@ class CreateActivityLogTable extends Migration
      */
     public function up()
     {
-        Schema::create('logs', function (Blueprint $table) {
+        Schema::create(config('model_trackable.table_name'), function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('action')->nullable();
             $table->text('description');
