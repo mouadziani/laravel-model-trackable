@@ -8,19 +8,22 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 
-/**
- * Class Log
- * @package App\Models
- */
 class Log extends Model
 {
-    protected $table = 'logs';
-
     public $guarded = [];
 
     protected $casts = [
         'properties' => 'collection',
     ];
+
+    public function __construct(array $attributes = [])
+    {
+        if (! isset($this->table)) {
+            $this->setTable(config('model_trackable.table_name'));
+        }
+
+        parent::__construct($attributes);
+    }
 
     public function subject(): MorphTo
     {
@@ -46,15 +49,6 @@ class Log extends Model
         return $this->changes();
     }
 
-    public function scopeInLog(Builder $query, ...$logNames): Builder
-    {
-        if (is_array($logNames[0])) {
-            $logNames = $logNames[0];
-        }
-
-        return $query->whereIn('log_name', $logNames);
-    }
-
     public function scopeCausedBy(Builder $query, Model $causer): Builder
     {
         return $query
@@ -68,25 +62,20 @@ class Log extends Model
             ->where('subject_type', get_class($subject));
     }
 
-    /**
-     * @param Model $subject
-     * @param int $subjectId
-     * @param string $action
-     * @param string $description
-     * @param array $properties
-     * @return mixed
-     */
-    public static function log(Model $subject, int $subjectId, string $action, string $description = '', array $properties = [])
-    {
-        $auth = Auth::user();
-
+    public static function log(
+        Model $subject,
+        int $subjectId,
+        string $action,
+        string $description = '',
+        array $properties = []
+    ) {
         return self::create([
             'action' => $action,
             'description' => $description,
             'subject_type' => get_class($subject),
             'subject_id' => $subjectId,
             'causer_type' => get_class($auth),
-            'causer_id' => $auth->id,
+            'causer_id' => Auth::id(),
             'properties' => $properties
         ]);
     }
