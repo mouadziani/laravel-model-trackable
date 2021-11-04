@@ -19,7 +19,7 @@ class Log extends Model
     public function __construct(array $attributes = [])
     {
         if (! isset($this->table)) {
-            $this->setTable(config('model_trackable.table_name'));
+            $this->setTable(config('trackable.table_name'));
         }
 
         parent::__construct($attributes);
