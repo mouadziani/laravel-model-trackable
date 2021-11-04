@@ -47,8 +47,10 @@ trait Trackable
                     $relationsChanges['new'] = $changes['new'];
                 }
             }
+
             return array_merge_recursive(self::$changedAttributes, $relationsChanges);
         }
+
         return self::$changedAttributes;
     }
 

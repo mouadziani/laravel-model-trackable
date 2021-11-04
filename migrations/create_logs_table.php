@@ -4,14 +4,14 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActivityLogTable extends Migration
+class CreateLogsTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('logs', function (Blueprint $table) {
+        Schema::create(config('trackable.table_name'), function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('action')->nullable();
             $table->text('description');
@@ -27,6 +27,6 @@ class CreateActivityLogTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('logs');
+        Schema::dropIfExists(config('trackable.table_name'));
     }
 }
