@@ -19,7 +19,7 @@ trait Trackable
     protected static function bootTrackable()
     {
         static::updated(function ($model) {
-            $changedFields = array_keys(Arr::except($model->getChanges(), 'updated_at'));
+            $changedFields = array_keys(Arr::except($model->getChanges(), static::UPDATED_AT));
             self::$changedAttributes['old'] = Arr::only($model->getRawOriginal(), $changedFields);
             self::$changedAttributes['new'] = $model->changes;
         });
