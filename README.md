@@ -86,4 +86,4 @@ If you discover any security related issues, please email mouad.ziani1997@gmail.
 This package is [Treeware](https://treeware.earth). If you use it in production, then we ask that you [**buy the world a tree**](https://plant.treeware.earth/mouadziani/laravel-model-trackable) to thank us for our work. By contributing to the Treeware forest you’ll be creating employment for local families and restoring wildlife habitats.
 
 
-feautred_repository
+featured_repository
